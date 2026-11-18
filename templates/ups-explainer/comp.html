@@ -1,0 +1,301 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#000}
+#frame{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Inter','Noto Color Emoji',sans-serif}
+#cam{position:absolute;inset:0;will-change:transform}
+#plate{position:absolute;inset:0;width:1080px;height:1920px;display:block}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.pos{position:absolute;transform:translate(-50%,-50%)}
+.a{opacity:0;will-change:transform,opacity,filter}
+.card{background:#fff;color:#0b0b0f;border-radius:38px;box-shadow:0 18px 50px rgba(0,0,0,.45);padding:26px 40px;font-weight:900;letter-spacing:-1.5px;white-space:nowrap}
+.glass{background:rgba(14,15,20,.82);color:#fff;border:2px solid rgba(255,255,255,.14);border-radius:34px;box-shadow:0 18px 50px rgba(0,0,0,.5);padding:22px 36px;font-weight:800;letter-spacing:-1px;white-space:nowrap}
+.chip{display:inline-flex;align-items:center;gap:14px;background:#fff;color:#0b0b0f;border-radius:999px;padding:16px 30px;font-weight:900;font-size:44px;letter-spacing:-1px;box-shadow:0 12px 34px rgba(0,0,0,.42);white-space:nowrap}
+.chip.dark{background:rgba(14,15,20,.86);color:#fff;border:2px solid rgba(255,255,255,.16)}
+.chip.green{background:#16a34a;color:#fff}
+.chip.red{background:#dc2626;color:#fff}
+.chip.gold{background:#FFC933;color:#111}
+.sel{position:relative;display:inline-block;outline:5px solid #3B82F6;outline-offset:6px;border-radius:2px}
+.sel i{position:absolute;width:16px;height:16px;background:#fff;border:4px solid #3B82F6}
+.sel i:nth-child(1){left:-17px;top:-17px}.sel i:nth-child(2){right:-17px;top:-17px}.sel i:nth-child(3){left:-17px;bottom:-17px}.sel i:nth-child(4){right:-17px;bottom:-17px}
+.orange{background:linear-gradient(180deg,#FFD15C 0%,#FF8A00 55%,#FF5A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* captions */
+#caps{position:absolute;left:0;right:0;top:1180px;height:140px;text-align:center}
+.grp{position:absolute;left:0;right:0;top:0;text-align:center;opacity:0;white-space:nowrap}
+.w{display:inline-block;margin:0 17px;font-weight:900;font-size:80px;letter-spacing:-2px;color:#fff;
+  -webkit-text-stroke:14px #000;paint-order:stroke fill;text-shadow:0 8px 24px rgba(0,0,0,.55);transform-origin:50% 60%}
+.w.dim{color:rgba(255,255,255,.42)}
+.w.act{color:#FFC933}
+.w .sel{outline-color:#3B82F6}
+/* battery */
+.bat{position:relative;width:560px;height:230px;border:12px solid #fff;border-radius:44px;background:rgba(14,15,20,.75);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.bat:after{content:'';position:absolute;right:-42px;top:62px;width:30px;height:82px;background:#fff;border-radius:0 16px 16px 0}
+.bat .fill{position:absolute;left:12px;top:12px;bottom:12px;border-radius:26px}
+.bat .lbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:72px;color:#fff;letter-spacing:-2px;-webkit-text-stroke:8px rgba(0,0,0,.6);paint-order:stroke fill}
+.node{display:flex;flex-direction:column;align-items:center;gap:14px}
+.node .ic{width:170px;height:170px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:92px;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.node .nm{font-weight:900;font-size:46px;color:#fff;letter-spacing:-1px;-webkit-text-stroke:10px #000;paint-order:stroke fill}
+.ring{position:absolute;border-radius:50%;border:5px solid rgba(255,140,0,.85);box-shadow:0 0 40px rgba(255,140,0,.7),inset 0 0 30px rgba(255,140,0,.4)}
+.icn{position:absolute;width:132px;height:132px;margin:-66px 0 0 -66px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:70px;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+</style></head>
+<body><div id="frame">
+ <div id="cam"><img id="plate"></div>
+
+ <!-- E0 hook -->
+ <div class="pos" style="left:540px;top:330px"><div class="a card" id="hook" style="font-size:74px;line-height:1.05;text-align:center;padding:30px 44px">😳 ¡Nos llegaron 50<br>mini “UPS” dañados! ⚡❌</div></div>
+
+ <!-- E1 big 50 + flying chips -->
+ <div class="pos" style="left:540px;top:760px"><div class="a" id="big50" style="text-align:center">
+   <div id="n50" class="orange" style="font-weight:900;font-size:470px;line-height:.9;letter-spacing:-24px;filter:drop-shadow(0 0 40px rgba(255,120,0,.75)) drop-shadow(0 14px 30px rgba(0,0,0,.6))">50</div>
+   <div class="chip dark" style="font-size:54px;margin-top:10px">mini UPS · batería dañada</div></div></div>
+ <div class="pos" style="left:230px;top:420px"><div class="a chip" id="fc0">🔋 Batería dañada</div></div>
+ <div class="pos" style="left:820px;top:480px"><div class="a chip red" id="fc1">⚠️ No enciende</div></div>
+ <div class="pos" style="left:250px;top:1080px"><div class="a chip dark" id="fc2">🔌 Sin respaldo</div></div>
+ <div class="pos" style="left:820px;top:1050px"><div class="a chip" id="fc3">📦 Lote de 50</div></div>
+ <div class="pos" style="left:860px;top:300px"><div class="a chip gold" id="fc4">🔋 0%</div></div>
+ <div class="pos" style="left:200px;top:250px"><div class="a chip dark" id="fc5">⚠️ Falla de batería</div></div>
+
+ <!-- E2/E3 hub & nodes -->
+ <svg id="lines" style="position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible" viewBox="0 0 1080 1920">
+   <path id="lnA" d="M540 470 C 420 520, 300 560, 260 650" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity="0"/>
+   <path id="lnB" d="M540 470 C 680 500, 820 560, 830 650" fill="none" stroke="#FF8A00" stroke-width="10" stroke-linecap="round" opacity="0" style="filter:drop-shadow(0 0 12px rgba(255,138,0,.9))"/>
+ </svg>
+ <div class="pos" style="left:540px;top:380px"><div class="a chip gold" id="hub" style="font-size:52px;padding:20px 38px">👑 King Phone</div></div>
+ <div class="pos" style="left:260px;top:760px"><div class="a node" id="ndA"><div class="ic">👤</div><div class="nm">Cliente final <span id="ckA" style="display:inline-block">✅</span></div></div></div>
+ <div class="pos" style="left:830px;top:760px"><div class="a node" id="ndB"><div class="ic">🏢</div><div class="nm">Empresas</div></div></div>
+ <div class="pos" style="left:780px;top:960px"><div class="a chip green" id="trust">🤝 Confían en nosotros</div></div>
+
+ <!-- E4 starburst -->
+ <div class="pos" style="left:540px;top:640px"><div class="a" id="star" style="width:600px;height:600px;position:relative">
+   <div class="ring" id="ring1" style="left:60px;top:60px;width:480px;height:480px"></div>
+   <svg id="burst" viewBox="-100 -100 200 200" style="position:absolute;left:150px;top:150px;width:300px;height:300px;filter:drop-shadow(0 0 22px #FF8A00) drop-shadow(0 0 50px rgba(255,138,0,.8))"></svg>
+ </div></div>
+ <div class="pos" style="left:540px;top:1010px"><div class="a chip" id="solv" style="font-size:54px">🔧 Le damos <span class="sel">solución<i></i><i></i><i></i><i></i></span></div></div>
+
+ <!-- E5 provider card -->
+ <div class="pos" style="left:540px;top:600px"><div class="a" id="prov" style="width:900px">
+   <div class="card" style="padding:34px 40px;display:flex;align-items:center;gap:28px">
+     <div style="width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,#FFB020,#FF5A00);display:flex;align-items:center;justify-content:center;font-size:84px;flex:none">🏬</div>
+     <div><div style="font-size:58px;letter-spacing:-2px">Proveedor mayorista</div>
+       <div style="font-size:36px;font-weight:700;color:#555;letter-spacing:-.5px;margin-top:6px">Vende mini UPS en Venezuela 🇻🇪</div></div>
+   </div>
+   <div style="display:flex;gap:22px;margin-top:22px">
+     <div class="card a" id="tile1" style="flex:1;padding:24px 30px"><div style="font-size:30px;font-weight:700;color:#777;letter-spacing:0">📦 llegaron</div><div style="font-size:72px;letter-spacing:-3px">50 equipos</div></div>
+     <div class="card a" id="tile2" style="flex:1;padding:24px 30px"><div style="font-size:30px;font-weight:700;color:#777;letter-spacing:0">🔋 producto</div><div style="font-size:72px;letter-spacing:-3px">Mini UPS</div></div>
+   </div></div></div>
+
+ <!-- E6 power / lightning -->
+ <div class="pos" style="left:540px;top:640px"><div class="a" id="pwr"><div class="bat" id="pbat"><div class="fill" id="pfill"></div><div class="lbl" id="plbl">100%</div></div></div></div>
+ <svg id="bolt" class="a" viewBox="0 0 100 200" style="position:absolute;left:400px;top:180px;width:300px;height:600px;filter:drop-shadow(0 0 30px #FFD600) drop-shadow(0 0 70px rgba(255,214,0,.8))"><path d="M62 0 L10 112 L46 112 L30 200 L92 76 L54 76 Z" fill="#FFE14D" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>
+ <div class="pos" style="left:540px;top:960px"><div class="a chip dark" id="apag" style="font-size:50px">⚡ Sin respaldo en los apagones</div></div>
+
+ <!-- E7 stamp -->
+ <div class="pos" style="left:540px;top:660px"><div class="a" id="stamp" style="border:14px solid #e11d2e;border-radius:28px;padding:22px 40px;color:#e11d2e;font-weight:900;font-size:96px;letter-spacing:-3px;line-height:1;text-align:center;background:rgba(255,255,255,.88);box-shadow:0 18px 50px rgba(0,0,0,.45)">NO SE PUEDE<br>VENDER ❌</div></div>
+
+ <!-- E8 solution -->
+ <div class="pos" style="left:540px;top:620px"><div class="a" id="sol" style="text-align:center">
+   <div style="font-size:150px;filter:drop-shadow(0 0 40px rgba(255,201,51,.9))">👑</div>
+   <div class="card" style="font-size:66px;margin-top:6px">✅ Nosotros lo resolvemos</div></div></div>
+
+ <!-- E9 battery swap -->
+ <div class="pos" style="left:540px;top:640px"><div class="a" id="bOld"><div class="bat" style="border-color:#ff4d4d"><div class="fill" style="width:60px;background:#ef4444"></div><div class="lbl">VIEJA 8%</div>
+   <svg viewBox="0 0 100 40" style="position:absolute;left:30%;top:6%;width:40%;height:88%" ><path d="M50 0 L42 14 L56 20 L44 40" fill="none" stroke="#111" stroke-width="3"/></svg></div></div></div>
+ <div class="pos" style="left:540px;top:640px"><div class="a" id="xOld" style="font-size:300px;line-height:1;filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))">❌</div></div>
+ <div class="pos" style="left:540px;top:400px"><div class="a chip red" id="tOld" style="font-size:52px">Baterías viejas y malas</div></div>
+ <div class="pos" style="left:540px;top:640px"><div class="a" id="bNew"><div class="bat" style="border-color:#4ade80"><div class="fill" id="nfill" style="background:linear-gradient(90deg,#16a34a,#4ade80)"></div><div class="lbl" id="nlbl">NUEVA ⚡</div></div></div></div>
+ <div class="pos" style="left:540px;top:400px"><div class="a chip green" id="tNew" style="font-size:52px">🔄 Reemplazo por nuevas</div></div>
+ <div class="pos" style="left:540px;top:900px"><div class="a chip gold" id="qual" style="font-size:60px;padding:20px 40px">⭐ Mejor calidad</div></div>
+
+ <!-- E10 method -->
+ <div class="pos" style="left:540px;top:990px"><div class="a glass" id="meth" style="font-size:52px;text-align:center">📋 Nuestra metodología
+   <div class="a chip green" id="mUps" style="font-size:44px;margin-top:18px;display:flex;justify-content:center">🔋 Mini UPS ✅</div></div></div>
+
+ <!-- E11 devices -->
+ <div class="pos" style="left:215px;top:560px"><div class="a chip" id="dAnd" style="font-size:50px">🤖 Android ✅</div></div>
+ <div class="pos" style="left:870px;top:560px"><div class="a chip" id="dIph" style="font-size:50px">📱 iPhone ✅</div></div>
+
+ <!-- E12 icon ring -->
+ <div id="icring" style="position:absolute;left:590px;top:560px;width:0;height:0"></div>
+ <div class="pos" style="left:540px;top:1060px"><div class="a chip gold" id="allx" style="font-size:52px">Todo lo que imagines 🔧</div></div>
+
+ <!-- E13 notification -->
+ <div class="pos" style="left:540px;top:270px"><div class="a glass" id="noti" style="width:980px;display:flex;align-items:center;gap:26px;border-radius:40px;padding:24px 30px">
+   <div style="width:100px;height:100px;border-radius:24px;background:#FFC933;display:flex;align-items:center;justify-content:center;font-size:60px;flex:none">⚠️</div>
+   <div><div style="font-size:44px;font-weight:900">¿Tu equipo tiene problemas?</div><div style="font-size:34px;font-weight:600;opacity:.75">Batería, carga, encendido…</div></div></div></div>
+
+ <!-- E14 tecnico aliado -->
+ <div class="pos" style="left:540px;top:1010px"><div class="a card" id="tec" style="font-size:62px;text-align:center;line-height:1.15">🛠️ <span class="sel">Técnico aliado<i></i><i></i><i></i><i></i></span>
+   <div class="a" id="tec2" style="font-size:46px;color:#444;letter-spacing:-1px;margin-top:10px">para tu empresa 🏢</div></div></div>
+
+ <!-- E15 CTA -->
+ <div class="pos" style="left:540px;top:1000px"><div class="a card" id="cta" style="width:960px;display:flex;align-items:center;gap:26px;padding:28px 34px">
+   <div style="width:130px;height:130px;border-radius:50%;padding:7px;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);flex:none">
+     <div style="width:100%;height:100%;border-radius:50%;background:#fff;border:5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:64px">👑</div></div>
+   <div style="flex:1;min-width:0"><div style="font-size:52px;letter-spacing:-1.5px">@kingphoneca</div><div style="font-size:32px;font-weight:600;color:#666;letter-spacing:0">King Phone · Servicio técnico</div></div>
+   <div id="btn" style="background:#0095F6;color:#fff;border-radius:20px;padding:20px 30px;font-size:40px;letter-spacing:-.5px;flex:none">Seguir</div></div></div>
+ <div class="pos" style="left:820px;top:760px"><div class="a chip gold" id="dm" style="font-size:46px">📩 Escríbenos</div></div>
+
+ <div id="flash"></div>
+ <div id="caps"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const C=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,d)=>C((t-a)/d);
+const E={out:x=>x>=1?1:1-Math.pow(2,-10*x),
+  back:x=>{const s=1.6;return 1+(s+1)*Math.pow(x-1,3)+s*Math.pow(x-1,2)},
+  io:x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2, in3:x=>x*x*x, o3:x=>1-Math.pow(1-x,3)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+
+// generic show: in [a, a+din), hold, out [b-dout, b]
+function show(id,t,a,b,o={}){
+  const el=typeof id==='string'?$(id):id; const din=o.din??.35, dout=o.dout??.18;
+  if(t<a||t>b){el.style.opacity=0;return 0}
+  const pi=P(t,a,din), po=P(t,b-dout,dout);
+  let tx=0,ty=0,sc=1,rot=o.rot||0,ry=0,blur=0,op=1;
+  const k=o.kind||'pop';
+  if(k==='pop'){sc=lerp(.55,1,E.back(pi));op=C(pi*2.5);blur=(1-pi)*8}
+  else if(k==='up'){ty=lerp(90,0,E.out(pi));op=C(pi*2);blur=(1-E.out(pi))*10}
+  else if(k==='down'){ty=lerp(-160,0,E.out(pi));op=C(pi*2)}
+  else if(k==='left'){tx=lerp(-700,0,E.out(pi));blur=(1-E.out(pi))*16;op=C(pi*3)}
+  else if(k==='right'){tx=lerp(700,0,E.out(pi));blur=(1-E.out(pi))*16;op=C(pi*3)}
+  else if(k==='blur'){op=C(pi*1.6);blur=(1-E.out(pi))*14;sc=lerp(1.08,1,E.out(pi))}
+  else if(k==='slam'){sc=lerp(2.6,1,E.in3(pi));op=C(pi*4)}
+  else if(k==='flip'){ry=lerp(-80,0,E.out(pi));op=C(pi*2.5);sc=lerp(.8,1,E.out(pi))}
+  else if(k==='none'){}
+  const ok=o.outKind||'blur';
+  if(po>0){ if(ok==='blur'){op*=1-po;blur+=po*10;sc*=lerp(1,1.06,po)}
+    else if(ok==='zoom'){op*=1-E.in3(po);sc*=lerp(1,1.7,E.in3(po));blur+=po*12}
+    else if(ok==='left'){tx+=lerp(0,-800,E.in3(po));blur+=po*18}
+    else if(ok==='up'){ty+=lerp(0,-260,E.in3(po));op*=1-po}
+    else if(ok==='shrink'){sc*=lerp(1,.3,E.in3(po));op*=1-po;blur+=po*8}}
+  el.style.opacity=op;
+  el.style.transform=`perspective(1200px) translate(${tx}px,${ty}px) rotate(${rot}deg) rotateY(${ry}deg) scale(${sc})`;
+  el.style.filter=blur>.2?`blur(${blur.toFixed(1)}px)`:'none';
+  return pi;
+}
+const sh=(t,t0,d,amp,f=38)=>{const p=P(t,t0,d);if(p<=0||p>=1)return[0,0];const e=amp*(1-p)*(1-p);return[e*Math.sin(t*f*6.28),e*Math.cos(t*f*5.1)]};
+const pun=(t,t0,amt,rise,t1,fall,eR=E.out)=>amt*eR(P(t,t0,rise))*(1-E.io(P(t,t1,fall)));
+
+function camera(t){
+  let s=1,ox=540,oy=700,dx=0,dy=0;
+  if(t<1.333){s=1}
+  else if(t<2.533){s=1+pun(t,1.60,.14,.16,9,1)}
+  else if(t<25.2){
+    s=1+pun(t,6.40,.10,.25,7.95,.4)+pun(t,13.12,.16,.12,16.5,.08)+pun(t,19.24,.07,.6,25.2,.1);
+  } else if(t<33.133){ox=590;oy=560;
+    s=1+.14*(1-E.out(P(t,25.2,.55)))+pun(t,29.32,.10,.14,30.62,.45)+pun(t,29.98,.12,.14,30.62,.45);
+  } else {ox=475;oy=600;
+    s=1+pun(t,35.42,.2,.45,37.74,.3,E.io)+pun(t,38.94,.07,.2,99,1);
+  }
+  for(const [t0,d,a] of [[13.12,.35,16],[14.56,.4,22],[21.56,.25,9],[34.86,.28,9],[2.0,.2,6]]){const [x,y]=sh(t,t0,d,a);dx+=x;dy+=y}
+  if(dx||dy) s=Math.max(s,1.05);
+  $('cam').style.transformOrigin=`${ox}px ${oy}px`;
+  $('cam').style.transform=`translate(${dx.toFixed(1)}px,${dy.toFixed(1)}px) scale(${s.toFixed(4)})`;
+}
+
+// starburst geometry
+(function(){let p='';for(let i=0;i<12;i++){const a=i*Math.PI/6;const x=Math.cos(a)*92,y=Math.sin(a)*92;p+=`<line x1="0" y1="0" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#FFB347" stroke-width="13" stroke-linecap="round"/>`}
+  $('burst').innerHTML=p+'<circle r="16" fill="#FFF3D6"/>';})();
+// icon ring
+const ICONS=['💻','🎮','⌚','🎧','📷','🖥️','📺','🔌','🔋','📱','🖨️','🕹️'];
+ICONS.forEach((c,i)=>{const d=document.createElement('div');d.className='icn';d.id='ic'+i;d.textContent=c;d.style.opacity=0;$('icring').appendChild(d)});
+
+// captions
+let WORDS=[],GROUPS=[];
+const KEY=new Set(['50','empresas','proveedor','mini','UPS','problema,','solución','viejas','nuevas','calidad.','Android.','iPhone,','imaginar','técnico','aliado','disposición','cliente','final']);
+function buildCaps(words){
+  WORDS=words; let g=[];
+  words.forEach((w,i)=>{g.push(i);const nx=words[i+1];const punct=/[.,?!]$/.test(w.text);const gap=nx?nx.start-w.end:1;
+    if(g.length>=3||punct||gap>=.15||!nx){GROUPS.push(g);g=[]}});
+  const caps=$('caps');
+  GROUPS.forEach((g,gi)=>{const d=document.createElement('div');d.className='grp';d.id='g'+gi;
+    d.innerHTML=g.map(i=>{let tx=words[i].text;if(i===0)tx=tx[0].toUpperCase()+tx.slice(1);
+      const inner=KEY.has(words[i].text)?`<span class="sel">${tx}<i></i><i></i><i></i><i></i></span>`:tx;
+      return `<span class="w" id="w${i}">${inner}</span>`}).join('');caps.appendChild(d)});
+  // fit
+  GROUPS.forEach((g,gi)=>{const d=$('g'+gi);d.style.opacity=1;let fs=80;
+    const wid=()=>[...d.querySelectorAll('.w')].reduce((s,w)=>s+w.getBoundingClientRect().width+34,0);
+    while(wid()>960&&fs>52){fs-=4;d.querySelectorAll('.w').forEach(w=>w.style.fontSize=fs+'px')}d.style.opacity=0});
+}
+function captions(t){
+  GROUPS.forEach((g,gi)=>{const d=$('g'+gi);const a=WORDS[g[0]].start-.06;const nx=GROUPS[gi+1];
+    const b=nx?Math.min(WORDS[nx[0]].start-.06,WORDS[g[g.length-1]].end+.6):40.8;
+    if(t<a||t>=b){d.style.opacity=0;return}
+    const p=P(t,a,.12);d.style.opacity=C(p*1.5);d.style.filter=p<1?`blur(${((1-p)*8).toFixed(1)}px)`:'none';
+    g.forEach((i,k)=>{const w=$('w'+i);const st=WORDS[i].start, en=(k<g.length-1)?WORDS[g[k+1]].start:b;
+      w.classList.toggle('dim',t<st);const act=t>=st&&t<en;w.classList.toggle('act',act);
+      const pp=P(t,st,.12);w.style.transform=act?`scale(${(1+.12*Math.sin(Math.PI*C(pp))*.9+.04).toFixed(3)})`:'scale(1)'})});
+}
+
+function render(t){
+  camera(t);
+  // flash
+  let fl=0; for(const [t0,d,m] of [[13.12,.16,.85],[16.55,.22,.6],[1.6,.1,.35]]){const p=P(t,t0,d);if(p>0&&p<1)fl=Math.max(fl,m*(1-p))}
+  $('flash').style.opacity=fl;
+
+  // E0 hook (visible at frame 0)
+  { const el=$('hook'); if(t<=1.58){const po=P(t,1.42,.16);const s=lerp(1.04,1,E.out(P(t,0,.4)));el.style.opacity=1-po;
+      el.style.transform=`scale(${s*lerp(1,1.25,E.in3(po))})`;el.style.filter=po>0?`blur(${po*12}px)`:'none'} else el.style.opacity=0;}
+  // E1 big 50
+  show('big50',t,1.55,2.62,{din:.3,dout:.16,outKind:'zoom'});
+  $('n50').textContent=Math.round(50*E.out(P(t,1.58,.42)));
+  [0,1,2,3,4,5].forEach(k=>show('fc'+k,t,1.62+k*.06,2.55,{kind:'flip',din:.3,dout:.14,rot:[-6,5,4,-5,8,-4][k]}));
+  // E2/E3 nodes
+  show('hub',t,2.62,8.0,{kind:'pop'});
+  const la=E.o3(P(t,4.2,.4)), lb=E.io(P(t,5.6,.8));
+  for(const [id,p] of [['lnA',la],['lnB',lb]]){const el=$(id);const L=el.getTotalLength();el.style.strokeDasharray=L;el.style.strokeDashoffset=L*(1-p);el.setAttribute('opacity',(t>2.6&&t<8.0)?(p>0?1-P(t,7.82,.18):0):0)}
+  show('ndA',t,4.28,8.0,{kind:'pop'});
+  { const c=$('ckA');const p=P(t,4.8,.25);c.style.opacity=C(p*2);c.style.transform=`scale(${lerp(.2,1,E.back(p))})`;}
+  show('ndB',t,6.36,8.0,{kind:'pop'});
+  show('trust',t,7.08,8.0,{kind:'up'});
+  // E4 star
+  if(show('star',t,8.3,10.2,{kind:'pop',din:.45})>0){const r=(t-8.3)*25;$('burst').style.transform=`rotate(${r}deg)`;
+    const rp=E.out(P(t,8.3,.7));$('ring1').style.transform=`scale(${lerp(.4,1,rp)})`;$('ring1').style.opacity=1-.5*rp;}
+  show('solv',t,8.52,10.2,{kind:'up'});
+  // E5 provider
+  show('prov',t,10.55,12.55,{kind:'up',outKind:'shrink',dout:.22});
+  show('tile1',t,11.0,12.55,{kind:'pop',dout:.01});show('tile2',t,12.12,12.55,{kind:'pop',dout:.01});
+  // E6 power + bolt
+  if(show('pwr',t,12.5,14.1,{kind:'pop',din:.25})>0){const lv=1-E.io(P(t,12.6,.55));$('pfill').style.width=(536*Math.max(lv,.02))+'px';
+    $('pfill').style.background=lv>.5?'#22c55e':(lv>.2?'#f59e0b':'#ef4444');$('plbl').textContent=Math.round(lv*100)+'%';}
+  { const el=$('bolt');const p=P(t,13.08,.1);if(t>=13.08&&t<14.05){el.style.opacity=t>13.9?1-P(t,13.9,.15):1;el.style.transform=`scale(${lerp(1.6,1,E.out(p))}) translateY(${lerp(-200,0,E.out(p))}px)`}else el.style.opacity=0;}
+  show('apag',t,13.2,14.1,{kind:'up',din:.25});
+  // E7 stamp
+  show('stamp',t,14.45,16.45,{kind:'slam',din:.12,rot:-8});
+  // E8 solution
+  show('sol',t,16.6,19.0,{kind:'pop',din:.4});
+  // E9 battery swap
+  show('bOld',t,19.2,22.4,{kind:'down',din:.4,outKind:'left',dout:.32});
+  show('tOld',t,20.0,22.3,{kind:'pop'});
+  show('xOld',t,21.52,22.3,{kind:'slam',din:.14});
+  show('bNew',t,22.35,25.18,{kind:'right',din:.4,outKind:'zoom',dout:.2});
+  show('tNew',t,22.3,25.0,{kind:'pop'});
+  { const p=E.io(P(t,23.1,1.0));$('nfill').style.width=(536*Math.max(p,.02))+'px';$('nlbl').textContent=p<1?Math.round(p*100)+'% ⚡':'NUEVA 100% ⚡';}
+  show('qual',t,24.5,25.18,{kind:'pop',dout:.15,outKind:'zoom'});
+  // E10 method
+  show('meth',t,25.5,28.5,{kind:'up'});show('mUps',t,27.8,28.5,{kind:'pop',dout:.01});
+  // E11 devices
+  show('dAnd',t,29.28,30.6,{kind:'left'});show('dIph',t,29.94,30.6,{kind:'right'});
+  // E12 icon ring
+  ICONS.forEach((c,i)=>{const el=$('ic'+i);const a0=30.62+i*.045, b0=33.0;
+    if(t<a0||t>b0){el.style.opacity=0;return}
+    const p=E.out(P(t,a0,.5)), q=E.in3(P(t,32.75,.25));const ang=i/ICONS.length*Math.PI*2+(t-30.6)*.35;
+    const R=430*p*(1-q*.9);el.style.opacity=C(P(t,a0,.15)*1.5)*(1-q);
+    el.style.transform=`translate(${(Math.cos(ang)*R).toFixed(1)}px,${(Math.sin(ang)*R*1.05).toFixed(1)}px) scale(${lerp(.3,1,p)})`});
+  show('allx',t,31.78,33.05,{kind:'pop'});
+  // E13 notification
+  show('noti',t,33.25,35.3,{kind:'down',outKind:'up',dout:.22});
+  // E14 tecnico
+  show('tec',t,35.95,37.7,{kind:'pop'});show('tec2',t,37.1,37.7,{kind:'up',din:.25,dout:.01});
+  // E15 CTA
+  show('cta',t,37.72,40.9,{kind:'up',din:.45,dout:.01});
+  { const b=$('btn');const p=P(t,39.25,.12);if(t<39.25){b.textContent='Seguir';b.style.background='#0095F6';b.style.color='#fff';b.style.transform='scale(1)'}
+    else{b.style.transform=`scale(${p<1?lerp(.88,1,E.back(p)):1})`;b.textContent='Siguiendo ✓';b.style.background='#EFEFEF';b.style.color='#111'}}
+  show('dm',t,39.55,40.9,{kind:'pop',dout:.01});
+  captions(t);
+}
+async function setFrame(src){const im=$('plate');im.src=src;await im.decode()}
+
+</script></body></html>
