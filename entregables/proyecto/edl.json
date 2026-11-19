@@ -1,0 +1,1872 @@
+{
+ "end": 114.6,
+ "endVoice": 109.6,
+ "shots": [
+  {
+   "s": 0.0,
+   "e": 1.8,
+   "src": "v1_retro.mp4",
+   "motion": "static",
+   "grade": "warm"
+  },
+  {
+   "s": 1.8,
+   "e": 2.45,
+   "src": "i02_lens.png",
+   "motion": "in",
+   "grade": "teal"
+  },
+  {
+   "s": 2.45,
+   "e": 3.2,
+   "src": "i03_circuit.png",
+   "motion": "out",
+   "grade": "cool"
+  },
+  {
+   "s": 3.2,
+   "e": 3.85,
+   "src": "i04_film.png",
+   "motion": "left",
+   "grade": "bw"
+  },
+  {
+   "s": 3.85,
+   "e": 4.75,
+   "src": "BLACK",
+   "motion": "static",
+   "grade": "none"
+  },
+  {
+   "s": 4.75,
+   "e": 6.2,
+   "src": "WHITE",
+   "motion": "static",
+   "grade": "none"
+  },
+  {
+   "s": 6.2,
+   "e": 8.05,
+   "src": "v2_medium.mp4",
+   "motion": "static",
+   "grade": "warm"
+  },
+  {
+   "s": 8.05,
+   "e": 10.25,
+   "src": "i05_workflow_boss.png",
+   "motion": "in",
+   "grade": "cool"
+  },
+  {
+   "s": 10.25,
+   "e": 11.1,
+   "src": "i07_cafe.png",
+   "motion": "in",
+   "grade": "warm"
+  },
+  {
+   "s": 11.1,
+   "e": 11.85,
+   "src": "i08_boutique.png",
+   "motion": "right",
+   "grade": "none"
+  },
+  {
+   "s": 11.85,
+   "e": 12.75,
+   "src": "i10_chef.png",
+   "motion": "out",
+   "grade": "warm"
+  },
+  {
+   "s": 12.75,
+   "e": 14.75,
+   "src": "i09_phones.png",
+   "motion": "up",
+   "grade": "none",
+   "zoom": 1.9,
+   "origin": "50% 92%"
+  },
+  {
+   "s": 14.75,
+   "e": 15.3,
+   "src": "i11_perfume.png",
+   "motion": "in",
+   "grade": "red"
+  },
+  {
+   "s": 15.3,
+   "e": 16.9,
+   "src": "i12_skincare.png",
+   "motion": "left",
+   "grade": "teal"
+  },
+  {
+   "s": 16.9,
+   "e": 18.3,
+   "src": "i13_phone_tap.png",
+   "motion": "in",
+   "grade": "green"
+  },
+  {
+   "s": 18.3,
+   "e": 20.95,
+   "src": "i14_workshop.png",
+   "motion": "out",
+   "grade": "teal"
+  },
+  {
+   "s": 20.95,
+   "e": 21.25,
+   "src": "BLACK",
+   "motion": "static",
+   "grade": "none"
+  },
+  {
+   "s": 21.25,
+   "e": 24.4,
+   "src": "p_close.png",
+   "motion": "in",
+   "grade": "none",
+   "slow": true
+  },
+  {
+   "s": 24.4,
+   "e": 24.95,
+   "src": "i16_hands_film.png",
+   "motion": "in",
+   "grade": "warm"
+  },
+  {
+   "s": 24.95,
+   "e": 25.5,
+   "src": "i17_timeline.png",
+   "motion": "right",
+   "grade": "none"
+  },
+  {
+   "s": 25.5,
+   "e": 26.7,
+   "src": "i18_desk_mess.png",
+   "motion": "out",
+   "grade": "cool"
+  },
+  {
+   "s": 26.7,
+   "e": 28.1,
+   "src": "i19_grading.png",
+   "motion": "in",
+   "grade": "teal"
+  },
+  {
+   "s": 28.1,
+   "e": 29.5,
+   "src": "i20_subs.png",
+   "motion": "in",
+   "grade": "cool"
+  },
+  {
+   "s": 29.5,
+   "e": 31.55,
+   "src": "i21_versions.png",
+   "motion": "left",
+   "grade": "none"
+  },
+  {
+   "s": 31.55,
+   "e": 32.55,
+   "src": "i22_clock.png",
+   "motion": "in",
+   "grade": "green"
+  },
+  {
+   "s": 32.55,
+   "e": 33.4,
+   "src": "v4_tired.mp4",
+   "motion": "static",
+   "grade": "cool"
+  },
+  {
+   "s": 33.4,
+   "e": 34.95,
+   "src": "WHITE",
+   "motion": "static",
+   "grade": "none"
+  },
+  {
+   "s": 34.95,
+   "e": 37.2,
+   "src": "i24_bakery.png",
+   "motion": "in",
+   "grade": "warm"
+  },
+  {
+   "s": 37.2,
+   "e": 40.0,
+   "src": "i25_meeting.png",
+   "motion": "right",
+   "grade": "warm"
+  },
+  {
+   "s": 40.0,
+   "e": 41.6,
+   "src": "v6_hourglass.mp4",
+   "motion": "static",
+   "grade": "red"
+  },
+  {
+   "s": 41.6,
+   "e": 43.35,
+   "src": "i26_hourglass.png",
+   "motion": "in",
+   "grade": "red",
+   "zoom": 1.25,
+   "origin": "50% 75%"
+  },
+  {
+   "s": 43.35,
+   "e": 46.3,
+   "src": "p_lean.png",
+   "motion": "in",
+   "grade": "teal",
+   "slow": true
+  },
+  {
+   "s": 46.3,
+   "e": 47.8,
+   "src": "i28_neural.png",
+   "motion": "in",
+   "grade": "cool"
+  },
+  {
+   "s": 47.8,
+   "e": 49.5,
+   "src": "i29_particles.png",
+   "motion": "out",
+   "grade": "teal"
+  },
+  {
+   "s": 49.5,
+   "e": 51.35,
+   "src": "i30_cinecam.png",
+   "motion": "right",
+   "grade": "teal"
+  },
+  {
+   "s": 51.35,
+   "e": 53.25,
+   "src": "i31_scene.png",
+   "motion": "up",
+   "grade": "warm"
+  },
+  {
+   "s": 53.25,
+   "e": 54.55,
+   "src": "i32_splash.png",
+   "motion": "in",
+   "grade": "cool"
+  },
+  {
+   "s": 54.55,
+   "e": 55.85,
+   "src": "v5_sneaker.mp4",
+   "motion": "static",
+   "grade": "none"
+  },
+  {
+   "s": 55.85,
+   "e": 56.8,
+   "src": "i34_sketch.png",
+   "motion": "in",
+   "grade": "warm"
+  },
+  {
+   "s": 56.8,
+   "e": 57.85,
+   "src": "i11_perfume.png",
+   "motion": "out",
+   "grade": "red"
+  },
+  {
+   "s": 57.85,
+   "e": 60.5,
+   "src": "i35_nodes.png",
+   "motion": "up",
+   "grade": "cool"
+  },
+  {
+   "s": 60.5,
+   "e": 62.7,
+   "src": "i36_bigcrew.png",
+   "motion": "left",
+   "grade": "bw"
+  },
+  {
+   "s": 62.7,
+   "e": 65.75,
+   "src": "i37_endless.png",
+   "motion": "in",
+   "grade": "cool",
+   "slow": true
+  },
+  {
+   "s": 65.75,
+   "e": 69.35,
+   "src": "p_wide.png",
+   "motion": "in",
+   "grade": "warm",
+   "slow": true
+  },
+  {
+   "s": 69.35,
+   "e": 72.8,
+   "src": "i39_moodboard.png",
+   "motion": "right",
+   "grade": "warm"
+  },
+  {
+   "s": 72.8,
+   "e": 76.05,
+   "src": "i40_review.png",
+   "motion": "in",
+   "grade": "none"
+  },
+  {
+   "s": 76.05,
+   "e": 77.15,
+   "src": "i41_phones_row.png",
+   "motion": "left",
+   "grade": "none"
+  },
+  {
+   "s": 77.15,
+   "e": 78.35,
+   "src": "i42_watch.png",
+   "motion": "in",
+   "grade": "bw"
+  },
+  {
+   "s": 78.35,
+   "e": 81.45,
+   "src": "i43_clean_desk.png",
+   "motion": "out",
+   "grade": "warm"
+  },
+  {
+   "s": 81.45,
+   "e": 85.15,
+   "src": "BLACK",
+   "motion": "static",
+   "grade": "none"
+  },
+  {
+   "s": 85.15,
+   "e": 87.55,
+   "src": "v3_firm.mp4",
+   "motion": "static",
+   "grade": "warm"
+  },
+  {
+   "s": 87.55,
+   "e": 90.9,
+   "src": "v2_medium.mp4",
+   "motion": "static",
+   "grade": "warm"
+  },
+  {
+   "s": 90.9,
+   "e": 92.6,
+   "src": "i28_neural.png",
+   "motion": "out",
+   "grade": "teal",
+   "zoom": 1.35,
+   "origin": "50% 45%"
+  },
+  {
+   "s": 92.6,
+   "e": 93.1,
+   "src": "i50_coffee_ad.png",
+   "motion": "in",
+   "grade": "warm"
+  },
+  {
+   "s": 93.1,
+   "e": 93.6,
+   "src": "i32_splash.png",
+   "motion": "out",
+   "grade": "cool"
+  },
+  {
+   "s": 93.6,
+   "e": 95.6,
+   "src": "i05_workflow_boss.png",
+   "motion": "left",
+   "grade": "cool",
+   "zoom": 1.3,
+   "origin": "70% 30%"
+  },
+  {
+   "s": 95.6,
+   "e": 96.5,
+   "src": "i51_fashion_ad.png",
+   "motion": "up",
+   "grade": "none"
+  },
+  {
+   "s": 96.5,
+   "e": 97.4,
+   "src": "i50_coffee_ad.png",
+   "motion": "out",
+   "grade": "warm"
+  },
+  {
+   "s": 97.4,
+   "e": 98.3,
+   "src": "i42_watch.png",
+   "motion": "in",
+   "grade": "none"
+  },
+  {
+   "s": 98.3,
+   "e": 99.6,
+   "src": "i12_skincare.png",
+   "motion": "right",
+   "grade": "teal"
+  },
+  {
+   "s": 99.6,
+   "e": 102.5,
+   "src": "v4_tired.mp4",
+   "motion": "static",
+   "grade": "desat"
+  },
+  {
+   "s": 102.5,
+   "e": 105.7,
+   "src": "i52_happy_owner.png",
+   "motion": "in",
+   "grade": "warm"
+  },
+  {
+   "s": 105.7,
+   "e": 107.4,
+   "src": "v5_sneaker.mp4",
+   "motion": "static",
+   "grade": "none",
+   "zoom": 1.15
+  },
+  {
+   "s": 107.4,
+   "e": 109.6,
+   "src": "p_firm.png",
+   "motion": "in",
+   "grade": "warm",
+   "slow": true
+  },
+  {
+   "s": 109.6,
+   "e": 114.6,
+   "src": "ENDCARD",
+   "motion": "static",
+   "grade": "none"
+  }
+ ],
+ "texts": [
+  {
+   "s": 1.8,
+   "e": 2.45,
+   "kind": "giant",
+   "lines": [
+    "CREAR"
+   ]
+  },
+  {
+   "s": 2.45,
+   "e": 3.2,
+   "kind": "giant",
+   "lines": [
+    "CONTENIDO"
+   ]
+  },
+  {
+   "s": 3.2,
+   "e": 3.85,
+   "kind": "giant",
+   "lines": [
+    "YA NO ES"
+   ]
+  },
+  {
+   "s": 3.85,
+   "e": 4.75,
+   "kind": "card",
+   "bg": "black",
+   "lines": [
+    {
+     "t": "CREAR CONTENIDO",
+     "f": "sans",
+     "c": "#ffffff"
+    },
+    {
+     "t": "YA NO ES",
+     "f": "sans",
+     "c": "#ffffff"
+    },
+    {
+     "t": "SUFICIENTE",
+     "f": "pixel",
+     "c": "#ff3b30"
+    }
+   ]
+  },
+  {
+   "s": 4.75,
+   "e": 6.2,
+   "kind": "card",
+   "bg": "white",
+   "lines": [
+    {
+     "t": "LA VERDADERA",
+     "f": "sans",
+     "c": "#0a0a0a"
+    },
+    {
+     "t": "ventaja",
+     "f": "serif",
+     "c": "#0a0a0a"
+    }
+   ]
+  },
+  {
+   "s": 12.75,
+   "e": 14.75,
+   "kind": "giant",
+   "lines": [
+    "PUBLICAR",
+    "CONSTANTEMENTE."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 14.75,
+   "e": 15.3,
+   "kind": "giant",
+   "lines": [
+    "VENDER"
+   ]
+  },
+  {
+   "s": 24.4,
+   "e": 24.95,
+   "kind": "giant",
+   "lines": [
+    "GRABAR."
+   ]
+  },
+  {
+   "s": 24.95,
+   "e": 25.5,
+   "kind": "giant",
+   "lines": [
+    "EDITAR."
+   ]
+  },
+  {
+   "s": 26.7,
+   "e": 28.1,
+   "kind": "giant",
+   "lines": [
+    "CORREGIR."
+   ]
+  },
+  {
+   "s": 29.5,
+   "e": 31.55,
+   "kind": "giant",
+   "lines": [
+    "VOLVER A",
+    "EMPEZAR."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 33.4,
+   "e": 34.95,
+   "kind": "card",
+   "bg": "white",
+   "lines": [
+    {
+     "t": "UN VIDEO.",
+     "f": "sans",
+     "c": "#0a0a0a"
+    },
+    {
+     "t": "HORAS DE TRABAJO.",
+     "f": "sans",
+     "c": "#0a0a0a",
+     "small": true
+    }
+   ]
+  },
+  {
+   "s": 41.6,
+   "e": 43.35,
+   "kind": "giant",
+   "lines": [
+    "TIEMPO",
+    "= DINERO."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 51.35,
+   "e": 53.25,
+   "kind": "giant",
+   "lines": [
+    "CREÁ",
+    "ESCENAS."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 53.25,
+   "e": 54.55,
+   "kind": "giant",
+   "lines": [
+    "GENERÁ",
+    "IMÁGENES."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 54.55,
+   "e": 55.85,
+   "kind": "giant",
+   "lines": [
+    "PRODUCÍ",
+    "VIDEOS."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 55.85,
+   "e": 57.85,
+   "kind": "giant",
+   "lines": [
+    "DISEÑÁ",
+    "ANUNCIOS."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 57.85,
+   "e": 60.5,
+   "kind": "giant",
+   "lines": [
+    "AUTOMATIZÁ",
+    "PROCESOS."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 76.05,
+   "e": 77.15,
+   "kind": "giant",
+   "lines": [
+    "MÁS",
+    "CONTENIDO."
+   ]
+  },
+  {
+   "s": 77.15,
+   "e": 78.35,
+   "kind": "giant",
+   "lines": [
+    "MEJORES",
+    "PRODUCCIONES."
+   ]
+  },
+  {
+   "s": 78.35,
+   "e": 81.45,
+   "kind": "giant",
+   "lines": [
+    "MENOS",
+    "TIEMPO",
+    "PERDIDO."
+   ],
+   "pos": "upper"
+  },
+  {
+   "s": 81.45,
+   "e": 85.15,
+   "kind": "kinetic",
+   "bg": "black",
+   "lines": [
+    {
+     "t": "LA DIFERENCIA",
+     "at": 81.5,
+     "f": "sans",
+     "c": "#ffffff"
+    },
+    {
+     "t": "NO ESTARÁ SOLAMENTE",
+     "at": 82.3,
+     "f": "sans",
+     "c": "#8a8a8a",
+     "small": true
+    },
+    {
+     "t": "EN TENER LAS",
+     "at": 83.55,
+     "f": "sans",
+     "c": "#ffffff",
+     "small": true
+    },
+    {
+     "t": "herramientas",
+     "at": 84.3,
+     "f": "serif",
+     "c": "#ffffff"
+    }
+   ]
+  },
+  {
+   "s": 86.35,
+   "e": 87.55,
+   "kind": "giant",
+   "lines": [
+    "LA DIFERENCIA ESTÁ",
+    "EN SABER UTILIZARLAS."
+   ],
+   "pos": "lower",
+   "size": 78
+  },
+  {
+   "s": 108.3,
+   "e": 109.6,
+   "kind": "giant",
+   "lines": [
+    "ESTE ES EL MOMENTO",
+    "DE APRENDER."
+   ],
+   "pos": "lower",
+   "size": 82
+  }
+ ],
+ "subs": [
+  {
+   "s": 0.46,
+   "e": 1.8,
+   "words": [
+    {
+     "t": "en",
+     "a": 0.46
+    },
+    {
+     "t": "los",
+     "a": 0.46
+    },
+    {
+     "t": "próximos",
+     "a": 0.73
+    },
+    {
+     "t": "años",
+     "a": 1.37
+    }
+   ]
+  },
+  {
+   "s": 6.24,
+   "e": 8.09,
+   "words": [
+    {
+     "t": "va",
+     "a": 6.24
+    },
+    {
+     "t": "a",
+     "a": 6.38
+    },
+    {
+     "t": "estar",
+     "a": 6.46
+    },
+    {
+     "t": "en",
+     "a": 6.74
+    },
+    {
+     "t": "saber",
+     "a": 6.84
+    },
+    {
+     "t": "producirlo",
+     "a": 7.12
+    }
+   ]
+  },
+  {
+   "s": 8.09,
+   "e": 9.67,
+   "words": [
+    {
+     "t": "sin",
+     "a": 8.09
+    },
+    {
+     "t": "tener",
+     "a": 8.23
+    },
+    {
+     "t": "que",
+     "a": 8.52
+    },
+    {
+     "t": "hacerlo",
+     "a": 8.69
+    },
+    {
+     "t": "todo",
+     "a": 9.32
+    }
+   ]
+  },
+  {
+   "s": 9.67,
+   "e": 10.3,
+   "words": [
+    {
+     "t": "tú",
+     "a": 9.67
+    },
+    {
+     "t": "mismo",
+     "a": 9.84
+    }
+   ]
+  },
+  {
+   "s": 10.3,
+   "e": 10.73,
+   "words": [
+    {
+     "t": "hoy",
+     "a": 10.3
+    }
+   ]
+  },
+  {
+   "s": 10.73,
+   "e": 12.25,
+   "words": [
+    {
+     "t": "miles",
+     "a": 10.73
+    },
+    {
+     "t": "de",
+     "a": 10.97
+    },
+    {
+     "t": "negocios",
+     "a": 11.1
+    },
+    {
+     "t": "necesitan",
+     "a": 11.85
+    }
+   ]
+  },
+  {
+   "s": 12.25,
+   "e": 12.75,
+   "words": [
+    {
+     "t": "publicar",
+     "a": 12.25
+    }
+   ]
+  },
+  {
+   "s": 15.33,
+   "e": 16.96,
+   "words": [
+    {
+     "t": "mostrar",
+     "a": 15.33
+    },
+    {
+     "t": "sus",
+     "a": 15.77
+    },
+    {
+     "t": "productos",
+     "a": 16.24
+    }
+   ]
+  },
+  {
+   "s": 16.96,
+   "e": 19.08,
+   "words": [
+    {
+     "t": "captar",
+     "a": 16.96
+    },
+    {
+     "t": "clientes",
+     "a": 17.53
+    },
+    {
+     "t": "y",
+     "a": 18.34
+    },
+    {
+     "t": "mantenerse",
+     "a": 18.37
+    }
+   ]
+  },
+  {
+   "s": 19.08,
+   "e": 20.99,
+   "words": [
+    {
+     "t": "presentes",
+     "a": 19.08
+    },
+    {
+     "t": "en",
+     "a": 19.71
+    },
+    {
+     "t": "redes",
+     "a": 19.85
+    },
+    {
+     "t": "sociales",
+     "a": 20.33
+    }
+   ]
+  },
+  {
+   "s": 20.99,
+   "e": 22.33,
+   "words": [
+    {
+     "t": "pero",
+     "a": 20.99
+    },
+    {
+     "t": "hay",
+     "a": 21.25
+    },
+    {
+     "t": "algo",
+     "a": 21.47
+    },
+    {
+     "t": "que",
+     "a": 21.78
+    },
+    {
+     "t": "muchos",
+     "a": 21.96
+    }
+   ]
+  },
+  {
+   "s": 22.33,
+   "e": 24.15,
+   "words": [
+    {
+     "t": "todavía",
+     "a": 22.33
+    },
+    {
+     "t": "no",
+     "a": 22.77
+    },
+    {
+     "t": "están",
+     "a": 22.89
+    },
+    {
+     "t": "viendo",
+     "a": 23.24
+    }
+   ]
+  },
+  {
+   "s": 25.55,
+   "e": 26.7,
+   "words": [
+    {
+     "t": "buscar",
+     "a": 25.55
+    },
+    {
+     "t": "recursos",
+     "a": 26.01
+    }
+   ]
+  },
+  {
+   "s": 28.19,
+   "e": 29.5,
+   "words": [
+    {
+     "t": "agregar",
+     "a": 28.19
+    },
+    {
+     "t": "subtítulos",
+     "a": 28.84
+    }
+   ]
+  },
+  {
+   "s": 31.65,
+   "e": 33.14,
+   "words": [
+    {
+     "t": "horas",
+     "a": 31.65
+    },
+    {
+     "t": "y",
+     "a": 32.09
+    },
+    {
+     "t": "horas",
+     "a": 32.15
+    },
+    {
+     "t": "de",
+     "a": 32.46
+    },
+    {
+     "t": "trabajo",
+     "a": 32.61
+    }
+   ]
+  },
+  {
+   "s": 33.14,
+   "e": 33.4,
+   "words": [
+    {
+     "t": "para",
+     "a": 33.14
+    }
+   ]
+  },
+  {
+   "s": 35.01,
+   "e": 36.46,
+   "words": [
+    {
+     "t": "y",
+     "a": 35.01
+    },
+    {
+     "t": "si",
+     "a": 35.04
+    },
+    {
+     "t": "tienes",
+     "a": 35.16
+    },
+    {
+     "t": "un",
+     "a": 35.61
+    },
+    {
+     "t": "negocio",
+     "a": 35.76
+    }
+   ]
+  },
+  {
+   "s": 36.46,
+   "e": 37.68,
+   "words": [
+    {
+     "t": "probablemente",
+     "a": 36.46
+    },
+    {
+     "t": "tu",
+     "a": 37.22
+    },
+    {
+     "t": "tiempo",
+     "a": 37.33
+    }
+   ]
+  },
+  {
+   "s": 37.68,
+   "e": 38.83,
+   "words": [
+    {
+     "t": "debería",
+     "a": 37.68
+    },
+    {
+     "t": "estar",
+     "a": 38.1
+    },
+    {
+     "t": "puesto",
+     "a": 38.37
+    },
+    {
+     "t": "en",
+     "a": 38.72
+    }
+   ]
+  },
+  {
+   "s": 38.83,
+   "e": 40.01,
+   "words": [
+    {
+     "t": "muchas",
+     "a": 38.83
+    },
+    {
+     "t": "otras",
+     "a": 39.18
+    },
+    {
+     "t": "cosas",
+     "a": 39.47
+    }
+   ]
+  },
+  {
+   "s": 40.01,
+   "e": 41.42,
+   "words": [
+    {
+     "t": "porque",
+     "a": 40.01
+    },
+    {
+     "t": "cada",
+     "a": 40.28
+    },
+    {
+     "t": "hora",
+     "a": 40.51
+    },
+    {
+     "t": "que",
+     "a": 40.77
+    },
+    {
+     "t": "pasas",
+     "a": 40.97
+    }
+   ]
+  },
+  {
+   "s": 41.42,
+   "e": 41.6,
+   "words": [
+    {
+     "t": "editando",
+     "a": 41.42
+    }
+   ]
+  },
+  {
+   "s": 43.8,
+   "e": 45.13,
+   "words": [
+    {
+     "t": "pero",
+     "a": 43.8
+    },
+    {
+     "t": "hoy",
+     "a": 44.0
+    },
+    {
+     "t": "existe",
+     "a": 44.24
+    },
+    {
+     "t": "una",
+     "a": 44.6
+    },
+    {
+     "t": "nueva",
+     "a": 44.89
+    }
+   ]
+  },
+  {
+   "s": 45.13,
+   "e": 46.34,
+   "words": [
+    {
+     "t": "forma",
+     "a": 45.13
+    },
+    {
+     "t": "de",
+     "a": 45.46
+    },
+    {
+     "t": "hacerlo",
+     "a": 45.59
+    }
+   ]
+  },
+  {
+   "s": 46.34,
+   "e": 47.81,
+   "words": [
+    {
+     "t": "la",
+     "a": 46.34
+    },
+    {
+     "t": "inteligencia",
+     "a": 46.37
+    },
+    {
+     "t": "artificial",
+     "a": 47.15
+    }
+   ]
+  },
+  {
+   "s": 47.81,
+   "e": 49.53,
+   "words": [
+    {
+     "t": "está",
+     "a": 47.81
+    },
+    {
+     "t": "cambiando",
+     "a": 48.19
+    },
+    {
+     "t": "completamente",
+     "a": 48.66
+    }
+   ]
+  },
+  {
+   "s": 49.53,
+   "e": 51.35,
+   "words": [
+    {
+     "t": "la",
+     "a": 49.53
+    },
+    {
+     "t": "producción",
+     "a": 49.72
+    },
+    {
+     "t": "audiovisual",
+     "a": 50.43
+    }
+   ]
+  },
+  {
+   "s": 60.56,
+   "e": 62.08,
+   "words": [
+    {
+     "t": "sin",
+     "a": 60.56
+    },
+    {
+     "t": "depender",
+     "a": 60.6
+    },
+    {
+     "t": "de",
+     "a": 61.14
+    },
+    {
+     "t": "producciones",
+     "a": 61.26
+    }
+   ]
+  },
+  {
+   "s": 62.08,
+   "e": 62.75,
+   "words": [
+    {
+     "t": "costosas",
+     "a": 62.08
+    }
+   ]
+  },
+  {
+   "s": 62.75,
+   "e": 64.03,
+   "words": [
+    {
+     "t": "ni",
+     "a": 62.75
+    },
+    {
+     "t": "pasar",
+     "a": 62.88
+    },
+    {
+     "t": "horas",
+     "a": 63.36
+    },
+    {
+     "t": "frente",
+     "a": 63.56
+    },
+    {
+     "t": "a",
+     "a": 63.97
+    }
+   ]
+  },
+  {
+   "s": 64.03,
+   "e": 65.78,
+   "words": [
+    {
+     "t": "una",
+     "a": 64.03
+    },
+    {
+     "t": "línea",
+     "a": 64.24
+    },
+    {
+     "t": "de",
+     "a": 64.6
+    },
+    {
+     "t": "tiempo",
+     "a": 64.89
+    },
+    {
+     "t": "editando",
+     "a": 65.11
+    }
+   ]
+  },
+  {
+   "s": 65.78,
+   "e": 67.05,
+   "words": [
+    {
+     "t": "y",
+     "a": 65.78
+    },
+    {
+     "t": "esto",
+     "a": 65.84
+    },
+    {
+     "t": "no",
+     "a": 66.11
+    },
+    {
+     "t": "significa",
+     "a": 66.34
+    },
+    {
+     "t": "que",
+     "a": 66.85
+    }
+   ]
+  },
+  {
+   "s": 67.05,
+   "e": 69.4,
+   "words": [
+    {
+     "t": "la",
+     "a": 67.05
+    },
+    {
+     "t": "creatividad",
+     "a": 67.18
+    },
+    {
+     "t": "vaya",
+     "a": 67.92
+    },
+    {
+     "t": "a",
+     "a": 68.2
+    },
+    {
+     "t": "desaparecer",
+     "a": 68.26
+    }
+   ]
+  },
+  {
+   "s": 69.4,
+   "e": 71.17,
+   "words": [
+    {
+     "t": "significa",
+     "a": 69.4
+    },
+    {
+     "t": "que",
+     "a": 69.99
+    },
+    {
+     "t": "quienes",
+     "a": 70.18
+    },
+    {
+     "t": "aprendan",
+     "a": 70.65
+    }
+   ]
+  },
+  {
+   "s": 71.17,
+   "e": 72.88,
+   "words": [
+    {
+     "t": "a",
+     "a": 71.17
+    },
+    {
+     "t": "utilizar",
+     "a": 71.27
+    },
+    {
+     "t": "estas",
+     "a": 71.76
+    },
+    {
+     "t": "herramientas",
+     "a": 72.09
+    }
+   ]
+  },
+  {
+   "s": 72.88,
+   "e": 74.13,
+   "words": [
+    {
+     "t": "van",
+     "a": 72.88
+    },
+    {
+     "t": "a",
+     "a": 73.1
+    },
+    {
+     "t": "poder",
+     "a": 73.14
+    },
+    {
+     "t": "hacer",
+     "a": 73.47
+    },
+    {
+     "t": "mucho",
+     "a": 73.89
+    }
+   ]
+  },
+  {
+   "s": 74.13,
+   "e": 75.46,
+   "words": [
+    {
+     "t": "más",
+     "a": 74.13
+    },
+    {
+     "t": "con",
+     "a": 74.33
+    },
+    {
+     "t": "los",
+     "a": 74.53
+    },
+    {
+     "t": "recursos",
+     "a": 74.74
+    },
+    {
+     "t": "que",
+     "a": 75.34
+    }
+   ]
+  },
+  {
+   "s": 75.46,
+   "e": 76.05,
+   "words": [
+    {
+     "t": "ya",
+     "a": 75.46
+    },
+    {
+     "t": "tienen",
+     "a": 75.59
+    }
+   ]
+  },
+  {
+   "s": 85.24,
+   "e": 86.35,
+   "words": [
+    {
+     "t": "estará",
+     "a": 85.24
+    },
+    {
+     "t": "en",
+     "a": 85.61
+    },
+    {
+     "t": "saber",
+     "a": 85.89
+    },
+    {
+     "t": "cómo",
+     "a": 86.12
+    }
+   ]
+  },
+  {
+   "s": 87.65,
+   "e": 89.05,
+   "words": [
+    {
+     "t": "por",
+     "a": 87.65
+    },
+    {
+     "t": "eso",
+     "a": 87.85
+    },
+    {
+     "t": "creamos",
+     "a": 88.06
+    },
+    {
+     "t": "un",
+     "a": 88.57
+    },
+    {
+     "t": "curso",
+     "a": 88.7
+    }
+   ]
+  },
+  {
+   "s": 89.05,
+   "e": 90.97,
+   "words": [
+    {
+     "t": "donde",
+     "a": 89.05
+    },
+    {
+     "t": "vas",
+     "a": 89.45
+    },
+    {
+     "t": "a",
+     "a": 89.62
+    },
+    {
+     "t": "aprender",
+     "a": 89.69
+    },
+    {
+     "t": "a",
+     "a": 90.26
+    },
+    {
+     "t": "utilizar",
+     "a": 90.34
+    }
+   ]
+  },
+  {
+   "s": 90.97,
+   "e": 92.7,
+   "words": [
+    {
+     "t": "inteligencia",
+     "a": 90.97
+    },
+    {
+     "t": "artificial",
+     "a": 91.75
+    }
+   ]
+  },
+  {
+   "s": 92.7,
+   "e": 93.67,
+   "words": [
+    {
+     "t": "para",
+     "a": 92.7
+    },
+    {
+     "t": "producir",
+     "a": 92.84
+    },
+    {
+     "t": "videos",
+     "a": 93.24
+    }
+   ]
+  },
+  {
+   "s": 93.67,
+   "e": 96.21,
+   "words": [
+    {
+     "t": "automatizar",
+     "a": 93.67
+    },
+    {
+     "t": "procesos",
+     "a": 94.8
+    },
+    {
+     "t": "y",
+     "a": 95.65
+    },
+    {
+     "t": "llevar",
+     "a": 95.73
+    }
+   ]
+  },
+  {
+   "s": 96.21,
+   "e": 97.9,
+   "words": [
+    {
+     "t": "la",
+     "a": 96.21
+    },
+    {
+     "t": "creación",
+     "a": 96.37
+    },
+    {
+     "t": "de",
+     "a": 97.01
+    },
+    {
+     "t": "contenido",
+     "a": 97.17
+    }
+   ]
+  },
+  {
+   "s": 97.9,
+   "e": 99.65,
+   "words": [
+    {
+     "t": "de",
+     "a": 97.9
+    },
+    {
+     "t": "tu",
+     "a": 98.06
+    },
+    {
+     "t": "negocio",
+     "a": 98.3
+    },
+    {
+     "t": "a",
+     "a": 98.78
+    },
+    {
+     "t": "otro",
+     "a": 98.86
+    },
+    {
+     "t": "nivel",
+     "a": 99.18
+    }
+   ]
+  },
+  {
+   "s": 99.65,
+   "e": 101.19,
+   "words": [
+    {
+     "t": "si",
+     "a": 99.65
+    },
+    {
+     "t": "quieres",
+     "a": 99.79
+    },
+    {
+     "t": "dejar",
+     "a": 100.28
+    },
+    {
+     "t": "de",
+     "a": 100.63
+    },
+    {
+     "t": "perder",
+     "a": 100.8
+    }
+   ]
+  },
+  {
+   "s": 101.19,
+   "e": 102.65,
+   "words": [
+    {
+     "t": "dinero",
+     "a": 101.19
+    },
+    {
+     "t": "o",
+     "a": 101.62
+    },
+    {
+     "t": "horas",
+     "a": 101.68
+    },
+    {
+     "t": "editando",
+     "a": 102.03
+    }
+   ]
+  },
+  {
+   "s": 102.65,
+   "e": 104.33,
+   "words": [
+    {
+     "t": "y",
+     "a": 102.65
+    },
+    {
+     "t": "empezar",
+     "a": 102.81
+    },
+    {
+     "t": "a",
+     "a": 103.24
+    },
+    {
+     "t": "aprovechar",
+     "a": 103.31
+    },
+    {
+     "t": "todo",
+     "a": 104.22
+    }
+   ]
+  },
+  {
+   "s": 104.33,
+   "e": 106.08,
+   "words": [
+    {
+     "t": "lo",
+     "a": 104.33
+    },
+    {
+     "t": "que",
+     "a": 104.52
+    },
+    {
+     "t": "esta",
+     "a": 104.69
+    },
+    {
+     "t": "tecnología",
+     "a": 105.0
+    },
+    {
+     "t": "puede",
+     "a": 105.72
+    }
+   ]
+  },
+  {
+   "s": 106.08,
+   "e": 107.49,
+   "words": [
+    {
+     "t": "hacer",
+     "a": 106.08
+    },
+    {
+     "t": "por",
+     "a": 106.49
+    },
+    {
+     "t": "ti",
+     "a": 106.68
+    }
+   ]
+  },
+  {
+   "s": 107.49,
+   "e": 108.3,
+   "words": [
+    {
+     "t": "este",
+     "a": 107.49
+    },
+    {
+     "t": "es",
+     "a": 107.6
+    },
+    {
+     "t": "el",
+     "a": 107.74
+    },
+    {
+     "t": "momento",
+     "a": 107.88
+    }
+   ]
+  }
+ ],
+ "flashes": [
+  4.75,
+  33.4,
+  43.35,
+  87.55,
+  109.6
+ ],
+ "glitches": [
+  1.8,
+  3.85,
+  20.95,
+  24.4,
+  46.3,
+  81.45,
+  99.6
+ ]
+}
