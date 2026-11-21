@@ -1,0 +1,32 @@
+{
+  "name": "mayor-de-sillas-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render MayorDeSillas out/mayor-de-sillas.mp4"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "@remotion/cli": "^4.0.545",
+    "@remotion/fonts": "^4.0.545",
+    "@remotion/google-fonts": "^4.0.545",
+    "@remotion/layout-utils": "^4.0.545",
+    "@remotion/media-utils": "^4.0.545",
+    "@remotion/motion-blur": "^4.0.545",
+    "@remotion/noise": "^4.0.545",
+    "@remotion/paths": "^4.0.545",
+    "@remotion/renderer": "^4.0.545",
+    "@remotion/shapes": "^4.0.545",
+    "@remotion/transitions": "^4.0.545",
+    "@types/react": "^19.3.0",
+    "lucide-react": "^1.77.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.545",
+    "typescript": "^7.0.2"
+  }
+}

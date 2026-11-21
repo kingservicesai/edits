@@ -1,0 +1,5 @@
+video/node_modules/
+video/raw/
+video/out/*.mp4
+!video/out/mayor-de-sillas-preview-720p.mp4
+.DS_Store
