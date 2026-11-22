@@ -553,12 +553,29 @@ def make_music(starts, total, sr=44100):
     fade = int(0.8 * sr)
     out[-fade:] *= np.linspace(1, 0, fade)
     out = out / np.max(np.abs(out)) * 0.8
+    if VO_DIR:  # voz en off: música baja + voz encima
+        out *= 0.22
+        for i, st in enumerate(starts):
+            with wave.open(f"{VO_DIR}/vo_{i}.wav") as w:
+                v = np.frombuffer(w.readframes(w.getnframes()), np.int16) / 32768.0
+            a = int((st + VO_DELAY) * sr)
+            e = min(len(out), a + len(v))
+            out[a:e] += v[: e - a] * 0.95
+        out = np.clip(out, -0.99, 0.99)
     with wave.open("music.wav", "wb") as w:
         w.setnchannels(1)
         w.setsampwidth(2)
         w.setframerate(sr)
         w.writeframes((out * 32767).astype(np.int16).tobytes())
 
+
+VO_DIR = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--vo=")), None)
+VO_DELAY = 0.25
+if VO_DIR:  # cada escena dura lo que su voz (+ margen), nunca menos que antes
+    for i, (fn, dur) in enumerate(SCENES):
+        with wave.open(f"{VO_DIR}/vo_{i}.wav") as w:
+            vd = w.getnframes() / w.getframerate()
+        SCENES[i] = (fn, max(dur, vd + VO_DELAY + 0.35))
 
 if __name__ == "__main__":
     total = sum(d for _, d in SCENES)
