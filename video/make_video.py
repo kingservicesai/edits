@@ -176,6 +176,21 @@ it=[(0.2,organelle("lys",130),90,430,"pop"),(0.5,organelle("per",130),W-90-300,4
     (2.2,text_layer("Guárdalo para tu examen",64,YEL,align="center"),M,1250,"pop")]
 scene(4.5, YEL, "RESUMEN", "En una frase", it)
 
+# ---------- sincronizar con la voz (ElevenLabs) ----------
+VOZ=os.path.join(os.path.dirname(os.path.abspath(__file__)),"voz")
+VSTART=0.25
+voices=[]
+for si,sc in enumerate(scenes):
+    fn=os.path.join(VOZ,f"v_{si}.wav")
+    if os.path.exists(fn):
+        with wave.open(fn) as wv:
+            data=np.frombuffer(wv.readframes(wv.getnframes()),dtype=np.int16)/32768.0
+        voices.append(data); need=VSTART+len(data)/44100+0.45
+        if need>sc["dur"]:
+            k=need/sc["dur"]; sc["dur"]=need
+            sc["items"]=[(t*k,)+tuple(rest) for (t,*rest) in sc["items"]]
+    else: voices.append(None)
+
 # ---------- fondo + render ----------
 def bg(accent):
     y=np.linspace(0,1,H)[:,None,None]
@@ -255,9 +270,14 @@ pt=np.arange(int(0.12*SR))/SR
 pop=np.sin(2*np.pi*(900-500*pt/0.12)*pt)*np.exp(-pt*40)*0.45
 for p in pops:
     s0=int(p*SR); au[s0:s0+len(pop)]+=pop
-au=au[:int(total*SR)]
+au=au[:int(total*SR)]*0.35
+T=0.0
+for sc,vd in zip(scenes,voices):
+    if vd is not None:
+        s0=int((T+VSTART)*SR); au[s0:s0+len(vd)]+=vd[:len(au)-s0]*1.6
+    T+=sc["dur"]
 fade=int(0.8*SR); au[-fade:]*=np.linspace(1,0,fade)
-au=np.tanh(au*0.9)*0.8
+au=np.tanh(au*0.9)*0.85
 with wave.open("/tmp/_a.wav","w") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((au*32767).astype(np.int16).tobytes())
 subprocess.run(["ffmpeg","-y","-loglevel","error","-i","/tmp/_v.mp4","-i","/tmp/_a.wav","-c:v","copy","-c:a","aac",
