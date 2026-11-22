@@ -20,7 +20,7 @@ P["u"] = b.crop((517, 695, 1020, 1020))
 # (panel, color, encabezado, viñetas, duración)
 Y, C, G, V, O = (255, 214, 0), (0, 220, 255), (90, 230, 120), (190, 140, 255), (255, 150, 60)
 S = [
- (1, Y, "¿Qué protege a\nTODAS tus células?", ["La membrana plasmática", "En 50 segundos"], 3.0),
+ (1, Y, "¿Qué protege a\nTODAS tus células?", ["La membrana plasmática", "Estructura, transporte y comunicación"], 3.0),
  (2, C, "1. Organización", ["Bicapa de lípidos", "Proteínas incrustadas", "Carbohidratos hacia afuera"], 3.8),
  (3, C, "2. Componentes", ["LÍPIDOS: fosfolípidos, esfingolípidos-glicolípidos y colesterol", "CARBOHIDRATOS: glucocáliz", "PROTEÍNAS: integrales, periféricas y ancladas"], 5.0),
  (4, G, "3. Funciones", ["ESTRUCTURA: soporte y forma", "TRANSPORTE: paso selectivo", "Comunicación y reconocimiento"], 4.0),
@@ -73,6 +73,21 @@ def wrap(text, font, maxw, dr):
         else: lines.append(cur); cur = w_
     lines.append(cur); return lines
 
+# Si existe voz/NN.wav, cada escena dura lo que dura su narración
+VOZ = Path(__file__).parent / "voz"
+def read_wav(p):
+    with wave.open(str(p)) as w:
+        raw = w.readframes(w.getnframes())
+    return [v / 32768 for v in struct.unpack("<%dh" % (len(raw) // 2), raw)]
+VOICES = {}
+for i in range(len(S)):
+    p = VOZ / f"{i:02d}.wav"
+    if p.exists():
+        VOICES[i] = read_wav(p)
+        pk, col, head, bl, _ = S[i]
+        S[i] = (pk, col, head, bl, 0.25 + len(VOICES[i]) / 44100 + 0.45)
+def bt(i, n, dur):  # momento en que aparece la viñeta i
+    return 0.55 + i * max(0.35, (dur * 0.75 - 0.55) / max(1, n))
 total = sum(s[4] for s in S)
 events = []  # (tiempo, tipo) para el audio
 ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
@@ -82,7 +97,8 @@ fb, fh = F(52), F(78)
 t0 = 0.0
 for si, (pk, col, head, bullets, dur) in enumerate(S):
     events.append((t0, "whoosh"))
-    for i in range(len(bullets)): events.append((t0 + 0.55 + i * 0.35, "pop"))
+    for i in range(len(bullets)): events.append((t0 + bt(i, len(bullets), dur), "pop"))
+    if si in VOICES: events.append((t0 + 0.25, si))
     pan = PANELS[pk]; ph = pan.height // 2
     _d = ImageDraw.Draw(bg)
     bl_h = sum(len(wrap(x, fb, W - 220, _d)) * 64 + 40 + 24 for x in bullets)
@@ -115,7 +131,7 @@ for si, (pk, col, head, bullets, dur) in enumerate(S):
         # viñetas escalonadas
         y = py + ph + 60
         for i, txt in enumerate(bullets):
-            k = ease((t - 0.55 - i * 0.35) / 0.3)
+            k = ease((t - bt(i, len(bullets), dur)) / 0.3)
             if k <= 0: break
             lines = wrap(txt, fb, W - 220, dr)
             bh = len(lines) * 64 + 40
@@ -139,11 +155,11 @@ def add(start, samples):
     for i, v in enumerate(samples):
         if s + i < N: buf[s + i] += v
 rng = random.Random(1)
-whoosh = [rng.uniform(-1, 1) * math.sin(math.pi * i / 9000) * 0.18 for i in range(9000)]
+whoosh = [rng.uniform(-1, 1) * math.sin(math.pi * i / 9000) * (0.08 if VOICES else 0.18) for i in range(9000)]
 lp = 0; ws = []
 for v in whoosh: lp = lp * 0.85 + v * 0.15; ws.append(lp * 3)
-pop = [math.sin(2 * math.pi * (900 - i * 0.12) * i / SR) * math.exp(-i / 900) * 0.35 for i in range(4000)]
-for tt, kind in events: add(tt, ws if kind == "whoosh" else pop)
+pop = [math.sin(2 * math.pi * (900 - i * 0.12) * i / SR) * math.exp(-i / 900) * (0.12 if VOICES else 0.35) for i in range(4000)]
+for tt, kind in events: add(tt, ws if kind == "whoosh" else pop if kind == "pop" else [v * 0.95 for v in VOICES[kind]])
 with wave.open(str(OUT) + ".wav", "w") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
     w.writeframes(b"".join(struct.pack("<h", int(max(-1, min(1, v)) * 32000)) for v in buf))
