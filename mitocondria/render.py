@@ -487,6 +487,31 @@ SCENES = [
     (s_resumen, 4.4, (30, 20, 60), (10, 8, 20)),
 ]
 
+VOICE_DELAY = 0.25
+ORIG = [sc[1] for sc in SCENES]
+def load_voice(sr=44100):
+    import os, glob
+    os.makedirs("voz", exist_ok=True)
+    for f in sorted(glob.glob("voz_raw/*.mp3")):  # recorta silencios y acelera 1.2x
+        out = "voz/" + os.path.basename(f)[:-4] + ".wav"
+        if not os.path.exists(out):
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-af",
+                "silenceremove=start_periods=1:start_threshold=-45dB:stop_periods=-1:stop_duration=0.25:stop_threshold=-45dB,atempo=1.2,loudnorm=I=-16:TP=-1.5",
+                "-ar", "44100", "-ac", "1", out], check=True)
+    clips = []
+    for i in range(len(SCENES)):
+        p = f"voz/{i:02d}.wav"
+        if os.path.exists(p):
+            with wave.open(p) as wf:
+                a = np.frombuffer(wf.readframes(wf.getnframes()), dtype=np.int16).astype(np.float64) / 32767
+        else:
+            a = np.zeros(1)
+        clips.append(a)
+        dur = VOICE_DELAY + len(a) / sr + 0.35
+        fn, _, c1, c2 = SCENES[i]
+        SCENES[i] = (fn, max(ORIG[i], dur), c1, c2)
+    return clips
+
 def render():
     total = sum(s[1] for s in SCENES)
     nframes = int(total * FPS)
@@ -505,7 +530,7 @@ def render():
         t = T - starts[i]
         img = bgs[i].copy()
         d = ImageDraw.Draw(img)
-        fn(img, d, t)
+        fn(img, d, t * ORIG[i] / dur)
         # barra de progreso
         d.rectangle((0, 0, int(W * T / total), 10), fill=YEL)
         # transición: barrido de color en los primeros 0.18 s
@@ -546,13 +571,19 @@ def music(total, sr=44100):
         out[s:s + wl] += wh
     fade = int(sr * 1.0)
     out[-fade:] *= np.linspace(1, 0, fade)
-    out = out / np.max(np.abs(out)) * 0.7
+    out = out / np.max(np.abs(out)) * 0.16
+    st = np.cumsum([0] + [sc[1] for sc in SCENES])
+    for i, a in enumerate(VOICE):
+        p = int((st[i] + VOICE_DELAY) * sr)
+        out[p:p + len(a)] += a[: max(0, n - p)] * 0.95
+    out = np.clip(out, -0.99, 0.99)
     with wave.open("music.wav", "wb") as wf:
         wf.setnchannels(1); wf.setsampwidth(2); wf.setframerate(sr)
         wf.writeframes((out * 32767).astype(np.int16).tobytes())
 
 if __name__ == "__main__":
     import sys
+    VOICE = load_voice()
     total = sum(s[1] for s in SCENES)
     if len(sys.argv) > 1 and sys.argv[1] == "preview":
         for idx, (fn, dur, a, b) in enumerate(SCENES):
